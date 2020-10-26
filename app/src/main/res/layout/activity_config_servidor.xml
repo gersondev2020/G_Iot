@@ -1,0 +1,140 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20px"
+            android:text="URL Servidor MQTT:"
+            android:textColor="@color/colorBtn"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:theme="@style/MyEditTextTheme" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20px"
+                    android:text="Porta:"
+                    android:textColor="@color/colorBtn"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/editPorta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:theme="@style/MyEditTextTheme" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20px"
+                    android:text="Cliente:"
+                    android:textColor="@color/colorBtn"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/editCliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:theme="@style/MyEditTextTheme" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20px"
+            android:text="Usuario:"
+            android:textColor="@color/colorBtn"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:theme="@style/MyEditTextTheme" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20px"
+            android:text="Senha:"
+            android:textColor="@color/colorBtn"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:theme="@style/MyEditTextTheme" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20px"
+            android:text="Cabeçalho:"
+            android:textColor="@color/colorBtn"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editCabecalho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:theme="@style/MyEditTextTheme" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
