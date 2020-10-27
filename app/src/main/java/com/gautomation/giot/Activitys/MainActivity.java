@@ -1,62 +1,54 @@
 package com.gautomation.giot.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.TypedValue;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.gautomation.giot.Class.Constants;
 import com.gautomation.giot.Class.PahoMqttClient;
 import com.gautomation.giot.Class.UnidadesAut;
 import com.gautomation.giot.R;
-
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
-
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import static com.gautomation.giot.Class.Constants.numerodeitem;
+import static com.gautomation.giot.Class.Constants.numeromaxdetags;
 
 
 public class MainActivity extends AppCompatActivity {
-    private TextView item;
-    TextView[] TextNome = new TextView[30];
-    TextView[] variavel = new TextView[30];
-    LinearLayout[] Items = new LinearLayout[30];
-    TextView Status;
+    // Variaves
+    private final TextView[] TextNome = new TextView[numerodeitem];
+    private final TextView[] variavel = new TextView[numerodeitem];
+    private final LinearLayout[] Items = new LinearLayout[numerodeitem];
     private MqttAndroidClient client;
-    private String TAG = "MainActivity";
     private PahoMqttClient pahoMqttClient;
-    private String clientid = "";
-    private UnidadesAut unidadesAut;
-    private Timer myTimer;
+    private final UnidadesAut unidadesAut = new UnidadesAut();
     private  String[] ListaTagReal;
     private  String[] ListaTagExibir ;
+    int[] tagdoItem = new int[numeromaxdetags];
+    String[] dadosDotag = new String[numeromaxdetags];
+    String[] Unidade = new String[numeromaxdetags];
+    String[] Qtddigito = new String[numeromaxdetags];
+    String[] Valormax = new String[numeromaxdetags];
+    String[] Valormin  = new String[numeromaxdetags];
+
     String servidor,
             porta,
             usuario,
             senha,
             cliente,
             cabecalho;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
         cabecalho = Sharad.getString("Cabecalho", "estivas/");
 
         //================ Configurações MQTT ============================================
-        clientid = cliente; // id do criente.
+        String clientid = cliente; // id do criente.
 
         Random aleatorio = new Random();
         int numeroID_1 = aleatorio.nextInt(100) + 1;
@@ -181,11 +173,11 @@ public class MainActivity extends AppCompatActivity {
                 usuario,
                 senha
         );
-        unidadesAut = new UnidadesAut();
+
         //Create listener for MQTT messages.
         mqttCallback();
         //Create Timer to report MQTT connection status every 1 second
-        myTimer = new Timer();
+        Timer myTimer = new Timer();
         myTimer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -195,19 +187,46 @@ public class MainActivity extends AppCompatActivity {
         }, 0, 2000);
 
         for(int i = 0; i < numerodeitem; i++) {
-            Items[i].setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                String view = String.valueOf(v);
-                view = view.substring(view.length()-3,view.length()-1);
-                    Intent passateladeconfig = new Intent(MainActivity.this, ConfigItem.class);
-                    passateladeconfig.putExtra("item", view);
-                    startActivity(passateladeconfig);
-                    return false;
-                }
+            Items[i].setOnLongClickListener(v -> {
+            String view = String.valueOf(v);
+            view = view.substring(view.length()-3,view.length()-1);
+                Intent passateladeconfig = new Intent(MainActivity.this, ConfigItem.class);
+                passateladeconfig.putExtra("item", view);
+                startActivity(passateladeconfig);
+                return false;
             });
         }
+    }// final do onCreate
+    @Override
+    protected void onResume() {
+        //================ Ler no sharad o tag do item ==============================================
+        SharedPreferences SharadItem = getSharedPreferences("ConfigItems", Context.MODE_PRIVATE);
+        for(int i = 0; i < ListaTagReal.length; i++) {
+            tagdoItem[i] = SharadItem.getInt("Items" + i, i);
+        }
+        //===========================================================================================
+        //================ Ler no sharad o dados do tag==============================================
+        SharedPreferences SharadTags = getSharedPreferences("ConfigTags", Context.MODE_PRIVATE);
+        for(int i = 0; i < ListaTagReal.length; i++) {
+            dadosDotag[i] = SharadTags.getString("Tags" +  tagdoItem[i],
+                    ListaTagExibir[i] + "," +
+                            ListaTagReal[i] + "," +
+                            unidadesAut.Valor_padrao_unidade(ListaTagReal[tagdoItem[i]]) + "," +
+                            "5" + "," +
+                            "9999" + "," +
+                            "-9999"
+            );
+            Unidade[i] = dadosDotag[i].split(",")[2];
+            Qtddigito[i] = dadosDotag[i].split(",")[3];
+            Valormax[i] = dadosDotag[i].split(",")[4];
+            Valormin[i] = dadosDotag[i].split(",")[5];
+        }
+        for(int i = 0; i < numerodeitem; i++) {
+            TextNome[i].setText(dadosDotag[i].split(",")[0]);
+        }
+        //===========================================================================================
 
+        super.onResume();
     }
 
     // =================== Menus =================================
@@ -233,17 +252,17 @@ public class MainActivity extends AppCompatActivity {
     {
         this.runOnUiThread(RunScheduledTasks);
     }
-    private Runnable RunScheduledTasks = new Runnable() {
+    private final Runnable RunScheduledTasks = new Runnable() {
         public void run() {
             TextView status  = findViewById(R.id.statusconexao);
-            String msg_new="";
+            String msg_new;
             if(pahoMqttClient.mqttAndroidClient.isConnected() ) {
                 msg_new = "Conectado\r\n";
                 status.setTextColor(0xFF00FF00); //Green if connected
                 status.setTextSize( TypedValue.COMPLEX_UNIT_SP, 14);
                 try {
                     for(int i = 0; i < numerodeitem; i++){
-                        pahoMqttClient.subscribe(client, cabecalho+ListaTagReal[i], 0);
+                        pahoMqttClient.subscribe(client, cabecalho+ListaTagReal[tagdoItem[i]], 0);
                     }
                 } catch (MqttException e) {
                     e.printStackTrace();
@@ -267,20 +286,29 @@ public class MainActivity extends AppCompatActivity {
 
             @SuppressLint("SetTextI18n")
             @Override
-            public void messageArrived(String topic, MqttMessage message) throws Exception {
+            public void messageArrived(String topic, MqttMessage message) {
                 String msg = message.toString();
                 //TextView tvMessage = (TextView) findViewById(R.id.subscribedMsg);
                 String[] listadetag = new String[numerodeitem];
                 for(int i = 0; i < numerodeitem; i++) {
-                    listadetag[i] = cabecalho + ListaTagReal[i];
+                    listadetag[i] = cabecalho + ListaTagReal[tagdoItem[i]];
                 }
                 for(int i = 0; i < numerodeitem; i++){
                     if(topic.equals(listadetag[i])) {
                         if(msg.length() > 5) {
-                            variavel[i].setText(msg.substring(0,5));
+                            variavel[i].setText(msg.substring(0, Integer.parseInt(Qtddigito[tagdoItem[i]]))+" "+Unidade[tagdoItem[i]]);
+
                         }else{
-                            variavel[i].setText(msg);
+                            variavel[i].setText(msg+" "+Unidade[tagdoItem[i]]);
                         }
+                        if(Float.parseFloat(msg) > Float.parseFloat(Valormax[i]) ||
+                                Float.parseFloat(msg) < Float.parseFloat(Valormin[i])
+                        ) {
+                            variavel[i].setTextColor(0xFFFF0000);
+                        }else{
+                            variavel[i].setTextColor(0xFFFFFFFF);
+                        }
+
                     }
                 }
             }

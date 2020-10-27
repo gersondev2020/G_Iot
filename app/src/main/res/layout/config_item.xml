@@ -34,6 +34,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="24sp"
+            android:textColor="@color/white"
             android:theme="@style/MyEditTextTheme" />
 
         <TextView
@@ -77,6 +78,7 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:textSize="24sp"
+                    android:textColor="@color/white"
                     android:theme="@style/MyEditTextTheme" />
 
             </LinearLayout>
@@ -101,6 +103,7 @@
                     android:ems="10"
                     android:inputType="numberDecimal"
                     android:textSize="24sp"
+                    android:textColor="@color/white"
                     android:theme="@style/MyEditTextTheme" />
 
             </LinearLayout>
@@ -132,6 +135,7 @@
                     android:ems="10"
                     android:inputType="number"
                     android:textSize="24sp"
+                    android:textColor="@color/white"
                     android:theme="@style/MyEditTextTheme" />
             </LinearLayout>
 
@@ -155,6 +159,7 @@
                     android:ems="10"
                     android:inputType="numberSigned"
                     android:textSize="24sp"
+                    android:textColor="@color/white"
                     android:theme="@style/MyEditTextTheme" />
 
             </LinearLayout>

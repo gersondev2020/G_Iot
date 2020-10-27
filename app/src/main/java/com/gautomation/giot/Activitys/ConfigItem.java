@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -16,31 +17,49 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.gautomation.giot.Class.UnidadesAut;
 import com.gautomation.giot.R;
 
-public class ConfigItem extends AppCompatActivity {
+public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     EditText edittexto, edtiunidade, editqtddig, editvalormin, editvalormax;
     TextView item;
-    String itemclicado;
     Spinner spintag;
+    private  String[] ListaTagReal;
+    private String[] ListaTagExibir;
+    int items;
+    UnidadesAut unidadesAut = new UnidadesAut();
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.config_item);
 
         item = findViewById(R.id.textItem);
+        edittexto = findViewById(R.id.editTexto);
+        spintag = findViewById(R.id.SpinnerTag);
         edtiunidade = findViewById(R.id.editUnidade);
         editqtddig =  findViewById(R.id.editQtddig);
-        editvalormin = findViewById(R.id.editCliente);
-        editvalormax =  findViewById(R.id.editCabecalho);
-        spintag = findViewById(R.id.SpinnerTag);
+        editvalormin = findViewById(R.id.editValormax);
+        editvalormax =  findViewById(R.id.editValormin);
+
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.ListaTagReal, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spintag.setAdapter(adapter);
-        //spintag.setOnItemSelectedListener(this);
+        spintag.setOnItemSelectedListener(this);
 
-        setEditqtddig();
+        ListaTagReal = getResources().getStringArray(R.array.ListaTagReal);
+        ListaTagExibir = getResources().getStringArray(R.array.ListaTagExibir);
+
+
+        //================ Ler no sharad o tag do item ==============================================
+        items = itemClicado();
+        SharedPreferences SharadItem = getSharedPreferences("ConfigItems", Context.MODE_PRIVATE);
+        int tagdoItem = SharadItem.getInt("Items"+items,items);
+        spintag.setSelection(tagdoItem);
+        //===========================================================================================
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -51,19 +70,25 @@ public class ConfigItem extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.sairesalvar) {
-//            SharedPreferences Sharad = getSharedPreferences("confiServidor", Context.MODE_PRIVATE);
-//            SharedPreferences.Editor editor = Sharad.edit();
-//            editor.putString("Servidor", Servidor.getText().toString());
-//            editor.putString("Porta",Porta.getText().toString());
-//            editor.putString("Usuario", Usuario.getText().toString());
-//            editor.putString("Senha", Senha.getText().toString());
-//            editor.putString("Cliente", Cliente.getText().toString());
-//            editor.putString("Cabecalho", Cabecalho.getText().toString());
-//            editor.commit();
+            //============ Salva O tag do item =========================================================
+           SharedPreferences SharadItem = getSharedPreferences("ConfigItems", Context.MODE_PRIVATE);
+           SharedPreferences.Editor editorItem = SharadItem.edit();
+           editorItem.putInt("Items"+items,spintag.getSelectedItemPosition());
+            //============ Salva dados do tag =========================================================
+           SharedPreferences SharadTags = getSharedPreferences("ConfigTags", Context.MODE_PRIVATE);
+           SharedPreferences.Editor editortag = SharadTags.edit();
+           editortag.putString("Tags"+spintag.getSelectedItemPosition(),
+                       edittexto.getText()                +","+
+                       spintag.getSelectedItemPosition()  +","+
+                       edtiunidade.getText()              +","+
+                       editqtddig.getText()               +","+
+                       editvalormin.getText()             +","+
+                       editvalormax.getText()
+           );
+           //===========================================================================================
+            editorItem.apply();
+            editortag.apply();
             Toast.makeText(getApplicationContext(), "Configuração Salvas:)", Toast.LENGTH_SHORT).show();
-
-//            Intent trocatela=new Intent(ConfigItem.this, MainActivity.class);
-//            startActivity(trocatela);
             finish();
             return true;
         }
@@ -71,10 +96,36 @@ public class ConfigItem extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    public void setEditqtddig() {
+    public int itemClicado() {
         Intent intent= getIntent();
-        itemclicado = (String) intent.getSerializableExtra("item");
+        String itemclicado = (String) intent.getSerializableExtra("item");
         item.setText("Item Selecionado: "+itemclicado);
+        return Integer.parseInt(itemclicado)-1;
+    }
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        int item = parent.getSelectedItemPosition();
+        //================ Ler no sharad o dados do tag==============================================
+        SharedPreferences SharadTags = getSharedPreferences("ConfigTags", Context.MODE_PRIVATE);
+        String[] dadosSalvos = SharadTags.getString("Tags" + item,
+                ListaTagExibir[item] + "," +
+                        ListaTagReal[item] + "," +
+                        "Kgf/m²" + "," +
+                        "5" + "," +
+                        "9999" + "," +
+                        "-9999"
+        ).split(",");
+        //===========================================================================================
+        edittexto.setText(dadosSalvos[0]);
+        edtiunidade.setText(unidadesAut.Valor_padrao_unidade(ListaTagReal[item]));
+        editqtddig.setText(dadosSalvos[3]);
+        editvalormin.setText(dadosSalvos[4]);
+        editvalormax.setText(dadosSalvos[5]);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
 }

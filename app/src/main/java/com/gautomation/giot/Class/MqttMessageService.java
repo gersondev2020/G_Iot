@@ -11,6 +11,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationCompat.Builder;
 
 import com.gautomation.giot.Activitys.MainActivity;
 
@@ -22,8 +23,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 public class MqttMessageService extends Service {
 
     private static final String TAG = "MqttMessageService";
-    private PahoMqttClient pahoMqttClient;
-    private MqttAndroidClient mqttAndroidClient;
+    public MqttAndroidClient mqttAndroidClient;
 
     public MqttMessageService() {
     }
@@ -34,7 +34,7 @@ public class MqttMessageService extends Service {
         super.onCreate();
         Log.d(TAG, "onCreate");
 
-        pahoMqttClient = new PahoMqttClient();
+        PahoMqttClient pahoMqttClient = new PahoMqttClient();
         mqttAndroidClient = pahoMqttClient.getMqttClient(getApplicationContext(), Constants.MQTT_BROKER_URL, Constants.CLIENT_ID, Constants.MQTT_CLIENT_UN,Constants.MQTT_CLIENT_PW);
 
         mqttAndroidClient.setCallback(new MqttCallbackExtended() {
@@ -49,7 +49,7 @@ public class MqttMessageService extends Service {
             }
 
             @Override
-            public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
+            public void messageArrived(String s, MqttMessage mqttMessage) {
                 setMessageNotification(s, new String(mqttMessage.getPayload()));
             }
 
@@ -79,11 +79,11 @@ public class MqttMessageService extends Service {
     }
 
     private void setMessageNotification(@NonNull String topic, @NonNull String msg) {
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(this)
-                        //.setSmallIcon(R.drawable.ic_message_black_24dp)
-                        .setContentTitle(topic)
-                        .setContentText(msg);
+        Builder mBuilder;
+        mBuilder = new Builder(this)
+                //.setSmallIcon(R.drawable.ic_message_black_24dp)
+                .setContentTitle(topic)
+                .setContentText(msg);
         Intent resultIntent = new Intent(this, MainActivity.class);
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
