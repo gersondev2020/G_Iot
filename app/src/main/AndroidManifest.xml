@@ -14,21 +14,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GIot">
-        <activity android:name=".Activitys.MainActivity">
+
+        <activity
+            android:name=".Activitys.ActivitySplash"
+            android:label="@string/title_activity_splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Activitys.ConfigItem"
+        <activity
+            android:name=".Activitys.MainActivity"/>
+        <activity
+            android:name=".Activitys.ConfigItem"
             android:label="CONFIGURE ITEM LEITURA" />
-
         <activity
             android:name=".Activitys.ConfigServidor"
             android:label="CONFIGURE SERVIDOR MQTT" />
-
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>

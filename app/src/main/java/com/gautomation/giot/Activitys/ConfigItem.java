@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.gautomation.giot.Class.UnidadesAut;
 import com.gautomation.giot.R;
 
@@ -26,11 +25,11 @@ public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemS
     Spinner spintag;
     private  String[] ListaTagReal;
     private String[] ListaTagExibir;
-    int items;
+    int items = 0;
+
+    //================ Ler no sharad o tag do item ==============================================
+
     UnidadesAut unidadesAut = new UnidadesAut();
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +37,8 @@ public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemS
 
         item = findViewById(R.id.textItem);
         edittexto = findViewById(R.id.editTexto);
-        spintag = findViewById(R.id.SpinnerTag);
         edtiunidade = findViewById(R.id.editUnidade);
+        spintag = findViewById(R.id.SpinnerTag);
         editqtddig =  findViewById(R.id.editQtddig);
         editvalormin = findViewById(R.id.editValormax);
         editvalormax =  findViewById(R.id.editValormin);
@@ -53,8 +52,6 @@ public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemS
         ListaTagReal = getResources().getStringArray(R.array.ListaTagReal);
         ListaTagExibir = getResources().getStringArray(R.array.ListaTagExibir);
 
-
-        //================ Ler no sharad o tag do item ==============================================
         items = itemClicado();
         SharedPreferences SharadItem = getSharedPreferences("ConfigItems", Context.MODE_PRIVATE);
         int tagdoItem = SharadItem.getInt("Items"+items,items);
@@ -74,21 +71,23 @@ public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemS
            SharedPreferences SharadItem = getSharedPreferences("ConfigItems", Context.MODE_PRIVATE);
            SharedPreferences.Editor editorItem = SharadItem.edit();
            editorItem.putInt("Items"+items,spintag.getSelectedItemPosition());
+           editorItem.apply();
             //============ Salva dados do tag =========================================================
            SharedPreferences SharadTags = getSharedPreferences("ConfigTags", Context.MODE_PRIVATE);
            SharedPreferences.Editor editortag = SharadTags.edit();
            editortag.putString("Tags"+spintag.getSelectedItemPosition(),
-                       edittexto.getText()                +","+
+                       edittexto.getText().toString()     +","+
                        spintag.getSelectedItemPosition()  +","+
-                       edtiunidade.getText()              +","+
-                       editqtddig.getText()               +","+
-                       editvalormin.getText()             +","+
-                       editvalormax.getText()
+                       edtiunidade.getText().toString()   +","+
+                       editqtddig.getText().toString()    +","+
+                       editvalormin.getText().toString()  +","+
+                       editvalormax.getText().toString()
            );
            //===========================================================================================
-            editorItem.apply();
             editortag.apply();
             Toast.makeText(getApplicationContext(), "Configuração Salvas:)", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getApplicationContext(), "testes"+edtiunidade.getText().toString(), Toast.LENGTH_SHORT).show();
+
             finish();
             return true;
         }
@@ -105,19 +104,20 @@ public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemS
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         int item = parent.getSelectedItemPosition();
+
         //================ Ler no sharad o dados do tag==============================================
         SharedPreferences SharadTags = getSharedPreferences("ConfigTags", Context.MODE_PRIVATE);
         String[] dadosSalvos = SharadTags.getString("Tags" + item,
                 ListaTagExibir[item] + "," +
                         ListaTagReal[item] + "," +
-                        "Kgf/m²" + "," +
+                        unidadesAut.Valor_padrao_unidade(ListaTagReal[item]) + "," +
                         "5" + "," +
                         "9999" + "," +
                         "-9999"
         ).split(",");
         //===========================================================================================
         edittexto.setText(dadosSalvos[0]);
-        edtiunidade.setText(unidadesAut.Valor_padrao_unidade(ListaTagReal[item]));
+        edtiunidade.setText(dadosSalvos[2]);
         editqtddig.setText(dadosSalvos[3]);
         editvalormin.setText(dadosSalvos[4]);
         editvalormax.setText(dadosSalvos[5]);
