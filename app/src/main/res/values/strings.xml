@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">G Iot</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
     <string-array name="ListaTagReal">
         <item>CAL_01_PT</item>
@@ -86,7 +88,7 @@
         <item>TT LINHA_TORRE</item>
         <item>RED 42KG</item>
         <item>RED 21KG</item>
-        <item>RED 1,5KG</item>
+        <item>RED 1.5KG</item>
         <item>AR COMPRI</item>
         <item>RELACAO M 45</item>
         <item>RELACAO_M_35</item>
