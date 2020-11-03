@@ -44,13 +44,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="01"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor1"
@@ -82,13 +104,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="02"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor2"
@@ -124,13 +168,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="03"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor3"
@@ -162,13 +228,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="04"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor4"
@@ -204,13 +292,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="05"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor5"
@@ -242,13 +352,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="06"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor6"
@@ -284,13 +416,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="07"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor7"
@@ -322,13 +476,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="08"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor8"
@@ -364,13 +540,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="09"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor9"
@@ -402,13 +600,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="10"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor10"
@@ -444,14 +664,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="11"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
                     <TextView
                         android:id="@+id/txtValor11"
                         android:layout_width="match_parent"
@@ -482,13 +723,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="12"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor12"
@@ -524,13 +787,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome13"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="13"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor13"
@@ -562,13 +847,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="14"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor14"
@@ -604,13 +911,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome15"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="15"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor15"
@@ -642,13 +971,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome16"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="16"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor16"
@@ -684,13 +1035,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="17"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor17"
@@ -722,13 +1095,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome18"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="18"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor18"
@@ -764,13 +1159,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome19"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="19"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor19"
@@ -802,13 +1219,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome20"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="20"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor20"
@@ -844,13 +1283,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="21"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor21"
@@ -882,13 +1343,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome22"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="22"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor22"
@@ -924,14 +1407,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome23"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="23"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
                     <TextView
                         android:id="@+id/txtValor23"
                         android:layout_width="match_parent"
@@ -962,13 +1466,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome24"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="24"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor24"
@@ -1004,13 +1530,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome25"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="25"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome25"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor25"
@@ -1042,13 +1590,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome26"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="26"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome26"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor26"
@@ -1084,13 +1654,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome27"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="27"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome27"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor27"
@@ -1122,13 +1714,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome28"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="28"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome28"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor28"
@@ -1164,13 +1778,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome29"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="29"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome29"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/txtValor29"
@@ -1202,14 +1838,35 @@
                     android:gravity="center|center_vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txtNome30"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Variavel"
-                        android:textColor="@color/colorBtn"
-                        android:textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingLeft="5dp"
+                            android:text="30"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/txtNome30"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:text="Variavel"
+                            android:textColor="@color/colorBtn"
+                            android:textSize="18sp" />
+                    </LinearLayout>
                     <TextView
                         android:id="@+id/txtValor30"
                         android:layout_width="match_parent"

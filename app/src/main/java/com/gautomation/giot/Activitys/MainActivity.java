@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
+
 import com.gautomation.giot.Class.PahoMqttClient;
 import com.gautomation.giot.Class.UnidadesAut;
 import com.gautomation.giot.R;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public String[] ListaTagReal;
     public String[] listaTagExibir;
     int[] tagdoItem = new int[numeromaxdetags];
+    int Quantidade_de_itens_na_tela;
 
     String[] Unidade = new String[numeromaxdetags];
     String[] Qtddigito = new String[numeromaxdetags];
@@ -145,6 +148,10 @@ public class MainActivity extends AppCompatActivity {
         Items[28] = findViewById(R.id.Item29);
         Items[29] = findViewById(R.id.Item30);
 
+//        Items[0].setVisibility(View.GONE);
+//        Items[1].setVisibility(View.GONE);
+
+
         SharedPreferences Sharad = getSharedPreferences("confiServidor", Context.MODE_PRIVATE);
         servidor = Sharad.getString("Servidor", "broker.hivemq.com");
         porta = Sharad.getString("Porta", "1883");
@@ -170,6 +177,21 @@ public class MainActivity extends AppCompatActivity {
                 usuario,
                 senha
         );
+        for(int i = 0; i < numerodeitem; i++) {
+            Items[i].setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    String view = String.valueOf(v);
+                    view = view.substring(view.length() - 3, view.length() - 1);
+                    Intent passateladeconfig = new Intent(MainActivity.this, ConfigItem.class);
+                    passateladeconfig.putExtra("item", view);
+                    startActivity(passateladeconfig);
+                    //finish();
+                    return false;
+                }
+            });
+
+        }
         //Create listener for MQTT messages.
         mqttCallback();
         //Create Timer to report MQTT connection status every 1 second
@@ -180,24 +202,11 @@ public class MainActivity extends AppCompatActivity {
                 ScheduleTasks();
             }
 
-        }, 0, 2000);
-
-        for(int i = 0; i < numerodeitem; i++) {
-            Items[i].setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    String view = String.valueOf(v);
-                    view = view.substring(view.length() - 3, view.length() - 1);
-                    Intent passateladeconfig = new Intent(MainActivity.this, ConfigItem.class);
-                    passateladeconfig.putExtra("item", view);
-                    startActivity(passateladeconfig);
-                    return false;
-                }
-            });
-
-        }
+        }, 0, 3000);
 
     }// final do onCreate
+
+
     @Override
     protected void onResume() {
         //================ Ler no sharad o tag do item ==============================================
@@ -226,8 +235,16 @@ public class MainActivity extends AppCompatActivity {
             Valormin[i] = dadosDotag[5];
 
         }
+        SharedPreferences SharadqtdItems = getSharedPreferences("QtdItems", Context.MODE_PRIVATE);
+        Quantidade_de_itens_na_tela = Integer.parseInt(SharadqtdItems.getString("Items", String.valueOf(numerodeitem)));
+        for(int i = 0; i < numerodeitem; i++) {
+            if (i >= Quantidade_de_itens_na_tela){
+                Items[i].setVisibility(View.GONE);
+            }else {
+                Items[i].setVisibility(View.VISIBLE);
+            }
+        }
         //===========================================================================================
-
         super.onResume();
     }
 
@@ -264,7 +281,9 @@ public class MainActivity extends AppCompatActivity {
                 status.setTextSize( TypedValue.COMPLEX_UNIT_SP, 14);
                 try {
                     for(int i = 0; i < numerodeitem; i++){
-                        pahoMqttClient.subscribe(client, cabecalho+ListaTagReal[tagdoItem[i]], 0);
+                        if(i < Quantidade_de_itens_na_tela) {
+                            pahoMqttClient.subscribe(client, cabecalho + ListaTagReal[tagdoItem[i]], 0);
+                        }
                     }
                 } catch (MqttException e) {
                     e.printStackTrace();
@@ -296,23 +315,25 @@ public class MainActivity extends AppCompatActivity {
                     listadetag[i] = cabecalho + ListaTagReal[tagdoItem[i]];
                 }
                 for(int i = 0; i < numerodeitem; i++){
-                    if(topic.equals(listadetag[i])) {
-                        if(msg.length() > 5) {
-                            String unidade = Unidade[tagdoItem[i]];
-                            variavel[i].setText(msg.substring(0, Integer.parseInt(Qtddigito[tagdoItem[i]]))+" "+unidade);
+                    if(i < Quantidade_de_itens_na_tela) {
+                        if (topic.equals(listadetag[i])) {
+                            if (msg.length() > 5) {
+                                String unidade = Unidade[tagdoItem[i]];
+                                variavel[i].setText(msg.substring(0, Integer.parseInt(Qtddigito[tagdoItem[i]])) + " " + unidade);
 
-                        }else{
+                            } else {
 
-                            variavel[i].setText(msg+" "+Unidade[tagdoItem[i]]);
+                                variavel[i].setText(msg + " " + Unidade[tagdoItem[i]]);
+                            }
+                            if (Float.parseFloat(msg) > Float.parseFloat(Valormax[i]) ||
+                                    Float.parseFloat(msg) < Float.parseFloat(Valormin[i])
+                            ) {
+                                variavel[i].setTextColor(0xFFFF0000);
+                            } else {
+                                variavel[i].setTextColor(0xFFFFFFFF);
+                            }
+
                         }
-                        if(Float.parseFloat(msg) > Float.parseFloat(Valormax[i]) ||
-                                Float.parseFloat(msg) < Float.parseFloat(Valormin[i])
-                        ) {
-                            variavel[i].setTextColor(0xFFFF0000);
-                        }else{
-                            variavel[i].setTextColor(0xFFFFFFFF);
-                        }
-
                     }
                 }
             }

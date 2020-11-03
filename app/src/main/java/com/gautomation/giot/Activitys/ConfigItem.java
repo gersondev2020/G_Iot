@@ -14,13 +14,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import static com.gautomation.giot.Class.Constants.numerodeitem;
 import androidx.appcompat.app.AppCompatActivity;
 import com.gautomation.giot.Class.UnidadesAut;
 import com.gautomation.giot.R;
 
+import static com.gautomation.giot.Class.Constants.numerodeitem;
+
 public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    EditText edittexto, edtiunidade, editqtddig, editvalormin, editvalormax;
+    EditText edittexto, edtiunidade, editqtddig, editvalormin, editvalormax, qtdItemsNatela;
     TextView item;
     Spinner spintag;
     private  String[] ListaTagReal;
@@ -42,6 +44,7 @@ public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemS
         editqtddig =  findViewById(R.id.editQtddig);
         editvalormin = findViewById(R.id.editValormax);
         editvalormax =  findViewById(R.id.editValormin);
+        qtdItemsNatela = findViewById(R.id.qtdItemsNatela);
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.ListaTagReal, R.layout.spinner_item);
@@ -71,7 +74,7 @@ public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemS
            SharedPreferences SharadItem = getSharedPreferences("ConfigItems", Context.MODE_PRIVATE);
            SharedPreferences.Editor editorItem = SharadItem.edit();
            editorItem.putInt("Items"+items,spintag.getSelectedItemPosition());
-           editorItem.apply();
+
             //============ Salva dados do tag =========================================================
            SharedPreferences SharadTags = getSharedPreferences("ConfigTags", Context.MODE_PRIVATE);
            SharedPreferences.Editor editortag = SharadTags.edit();
@@ -85,8 +88,25 @@ public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemS
            );
            //===========================================================================================
             editortag.apply();
+            //============ Salva O tag do item =========================================================
+            SharedPreferences SharadqtdItems = getSharedPreferences("QtdItems", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editorSharadqtdItems = SharadqtdItems.edit();
+            int t = Integer.parseInt(qtdItemsNatela.getText().toString());
+            if(t <= 30){
+                editorSharadqtdItems.putString("Items", qtdItemsNatela.getText().toString());
+            }else{
+                Toast.makeText(getApplicationContext(), "Quantidades de Itens na tela, máximo 30 Itens!!", Toast.LENGTH_SHORT).show();
+            }
+
+            editorItem.apply();
+            editortag.apply();
+            editorSharadqtdItems.apply();
+//            Intent voutaparatelainicial = new Intent(ConfigItem.this, MainActivity.class);
+//            startActivity(voutaparatelainicial);
+
             Toast.makeText(getApplicationContext(), "Configuração Salvas:)", Toast.LENGTH_SHORT).show();
-           // Toast.makeText(getApplicationContext(), "testes"+edtiunidade.getText().toString(), Toast.LENGTH_SHORT).show();
+
+
 
             finish();
             return true;
@@ -98,7 +118,7 @@ public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemS
     public int itemClicado() {
         Intent intent= getIntent();
         String itemclicado = (String) intent.getSerializableExtra("item");
-        item.setText("Item Selecionado: "+itemclicado);
+        item.setText("Item Selecionado Foi: "+itemclicado);
         return Integer.parseInt(itemclicado)-1;
     }
     @Override
@@ -121,6 +141,9 @@ public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemS
         editqtddig.setText(dadosSalvos[3]);
         editvalormin.setText(dadosSalvos[4]);
         editvalormax.setText(dadosSalvos[5]);
+        SharedPreferences SharadqtdItems = getSharedPreferences("QtdItems", Context.MODE_PRIVATE);
+        String f = SharadqtdItems.getString("Items", String.valueOf(numerodeitem));
+        qtdItemsNatela.setText(f);
     }
 
     @Override
