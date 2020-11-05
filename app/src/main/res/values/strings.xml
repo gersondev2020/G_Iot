@@ -1,101 +1,151 @@
 <resources>
-    <string name="app_name">G Iot</string>
+    <string name="app_name">G IoT</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-
     <string-array name="ListaTagReal">
-        <item>CAL_01_PT</item>
-        <item>CAL_01_FT</item>
-        <item>CAL_01_TT</item>
-        <item>CAL_02_PT</item>
-        <item>CAL_02_FT</item>
-        <item>CAL_02_TT</item>
-        <item>CAL_03_PT</item>
-        <item>CAL_03_FT</item>
-        <item>CAL_03_TT</item>
-        <item>CAL_04_PT</item>
-        <item>CAL_04_FT</item>
-        <item>CAL_04_TT</item>
-        <item>PT_MASTER</item>
-        <item>POT_G5</item>
-        <item>POT_G6</item>
-        <item>EXPORTACAO</item>
-        <item>MOENDA_NIVEL_1T</item>
-        <item>MOENDA_VZ_EMBEBICAO</item>
-        <item>MOENDA_VZ_CALDO_MISTO</item>
-        <item>MOENDA_RPM_1T</item>
-        <item>MOENDA_RPM_PICADOR</item>
-        <item>MOENDA_RPM_DESFIBRADOR</item>
-        <item>FABRICACAO_PH_CAELADO</item>
-        <item>FABRICACAO_PH_SULFITADO</item>
-        <item>FABRICACAO_PH_LICOR_CLARIFICADO</item>
-        <item>FABRICACAO_NIVEL_EVAPORADOR_01</item>
-        <item>FABRICACAO_NIVEL_EVAPORADOR_1A</item>
-        <item>FABRICACAO_NIVEL_EVAPORADOR_1B</item>
-        <item>FABRICACAO_VZ_CALDO_MISTO</item>
-        <item>FABRICACAO_NIVEL_CALDO_MISTO</item>
-        <item>FABRICACAO_NIVEL_TQ_XAROPE</item>
-        <item>FABRICACAO_NIVEL_MEXEDEIRA</item>
-        <item>PT_LINHA_TORRE_EVAPORACAO</item>
-        <item>TT_LINHA_TORRE_EVAPORACAO</item>
-        <item>RED_42KG</item>
-        <item>RED_21KG</item>
-        <item>RED_1_5KG</item>
-        <item>PT_AR_COMPRIMIDO</item>
-        <item>RELACAO_MESA_45</item>
-        <item>RELACAO_MESA_35</item>
-        <item>ABERTURA_VAL_RED_42KG</item>
-        <item>ABERTURA_VAL_RED_21KG</item>
-        <item>LT_TQ_CALDO_DECANTADO</item>
-        <item>VAZAOGERAL</item>
+        <item>	01-CAL_01_PT	</item>
+        <item>	02-CAL_01_FT	</item>
+        <item>	03-CAL_01_TT	</item>
+        <item>	04-CAL_02_PT	</item>
+        <item>	05-CAL_02_FT	</item>
+        <item>	06-CAL_02_TT	</item>
+        <item>	07-CAL_03_PT	</item>
+        <item>	08-CAL_03_FT	</item>
+        <item>	09-CAL_03_TT	</item>
+        <item>	10-CAL_04_PT	</item>
+        <item>	11-CAL_04_FT	</item>
+        <item>	12-CAL_04_TT	</item>
+        <item>	13-VAZAOGERAL	</item>
+        <item>	14-PT_MASTER	</item>
+        <item>	15-RED_42KG	</item>
+        <item>	16-RED_21KG	</item>
+        <item>	17-RED_1_5KG	</item>
+        <item>	18-ABER_VAL_42KG	</item>
+        <item>	19-ABER_VAL_21KG	</item>
+        <item>	20-POTENC_G5	</item>
+        <item>	21-POT_G6	</item>
+        <item>	22-EXPORTACAO	</item>
+        <item>	23-PT_AR_COMPRI	</item>
+        <item>	24-M_NIVEL_1T	</item>
+        <item>	25-M_VZ_EMBEBI	</item>
+        <item>	26-M_VZ_C_MISTO	</item>
+        <item>	27-M_RPM_1T	</item>
+        <item>	28-M_RPM_2e3T	</item>
+        <item>	29-M_RPM_4e5T	</item>
+        <item>	30-M_RPM_PICA	</item>
+        <item>	31-M_RPM_DESF	</item>
+        <item>	32-RELA_MESA_45	</item>
+        <item>	33-RELA_MESA_35	</item>
+        <item>	34-TT_AGUA_EMB	</item>
+        <item>	35-F_PH_CALEADO	</item>
+        <item>	36-F_PH_SULFITADO	</item>
+        <item>	37-F_PH_LICOR_CLARI	</item>
+        <item>	38-F_NIVEL_EVAP_01	</item>
+        <item>	39-F_NIVEL_EVAP_1A	</item>
+        <item>	40-F_NIVEL_EVAP_1B	</item>
+        <item>	41-F_VZ_CALDO_MISTO	</item>
+        <item>	42-F_NIVEL_C_MISTO	</item>
+        <item>	43-F_NIVEL_TQ_XAROPE	</item>
+        <item>	44-F_NIVEL_MEXEDEIRA	</item>
+        <item>	45-PT_TORRE_EVAPORA	</item>
+        <item>	46-TT_ORRE_EVAPORA	</item>
+        <item>	47-LT_TQ_C_DECAN	</item>
+        <item>	48-ST_CENT_MASSA_A	</item>
+        <item>	49-TR_VZ_CAL_DECAN	</item>
+        <item>	50-VZ_LIC_MISTO	</item>
+        <item>	51-VZ_LIC_BRUTO	</item>
+        <item>	52-DES_MV_VAL_VP	</item>
+        <item>	53-DES_AM_VAL_VP	</item>
+        <item>	54-TT_BAND_20_COL_A	</item>
+        <item>	55-DES_SP_TT_VI_COL_A	</item>
+        <item>	56-DES_MV_V_VI_COL_A	</item>
+        <item>	57-DES_AM_V_VI_COL_A	</item>
+        <item>	58-DES_TEMP_VP_COL_A	</item>
+        <item>	59-DES_SP_TT_VP_COL_A	</item>
+        <item>	60-DES_MV_V_VP_COL_A	</item>
+        <item>	61-DES_AM_V_VP_COL_A	</item>
+        <item>	62-DES_PT_V1	</item>
+        <item>	63-VZ_VINH_COL_A	</item>
+        <item>	64-TT_VINH_COL_A	</item>
+        <item>	65-TT_BAND_01_COL_A	</item>
+        <item>	66-PT_BASE_COL_A	</item>
+        <item>	67-GL_VINHO	</item>
+        <item>	68-VZ_CALDO_DEST	</item>
+        <item>	69-TT_VP_EVAPOR	</item>
+
     </string-array>
     <string-array name="ListaTagExibir">
-        <item>CAL 01 PT</item>
-        <item>CAL 01 FT</item>
-        <item>CAL 01 TT</item>
-        <item>CAL 02 PT</item>
-        <item>CAL 02 FT</item>
-        <item>CAL 02 TT</item>
-        <item>CAL 03 PT</item>
-        <item>CAL 03 FT</item>
-        <item>CAL 03 TT</item>
-        <item>CAL 04 PT</item>
-        <item>CAL 04 FT</item>
-        <item>CAL 04 TT</item>
-        <item>PT MASTER</item>
-        <item>POTENC G5</item>
-        <item>POTENC G6</item>
-        <item>EXPORTACÃO</item>
-        <item>NIVEL 1°T</item>
-        <item>VZ EMBEBICAO</item>
-        <item>VZ CALDO_MISTO</item>
-        <item>RPM 1°T</item>
-        <item>RPM PICADOR</item>
-        <item>RPM DESFIBR</item>
-        <item>PH CAELADO</item>
-        <item>PH SULFITADO</item>
-        <item>PH CLARIFICA</item>
-        <item>NIVEL EVAPOR 01</item>
-        <item>NIVEL EVAPOR 1A</item>
-        <item>NIVEL EVAPOR 1B</item>
-        <item>VZ CALDO MISTO FAB</item>
-        <item>NÍVEL CALDO MISTO</item>
-        <item>NIVEL TQ XAROPE</item>
-        <item>NIVEL MEXEDEIRA</item>
-        <item>PT LINHA TORRE</item>
-        <item>TT LINHA_TORRE</item>
-        <item>RED 42KG</item>
-        <item>RED 21KG</item>
-        <item>RED 1.5KG</item>
-        <item>AR COMPRI</item>
-        <item>RELACAO M 45</item>
-        <item>RELACAO_M_35</item>
-        <item>ABER VAL RED 42KG</item>
-        <item>ABER VAL RED 21KG</item>
-        <item>LT TQ CAL DECA</item>
-        <item>VAZAO GERAL</item>
+        <item>	CAL_01_PT	</item>
+        <item>	CAL_01_FT	</item>
+        <item>	CAL_01_TT	</item>
+        <item>	CAL_02_PT	</item>
+        <item>	CAL_02_FT	</item>
+        <item>	CAL_02_TT	</item>
+        <item>	CAL_03_PT	</item>
+        <item>	CAL_03_FT	</item>
+        <item>	CAL_03_TT	</item>
+        <item>	CAL_04_PT	</item>
+        <item>	CAL_04_FT	</item>
+        <item>	CAL_04_TT	</item>
+        <item>	VAZAOGERAL	</item>
+        <item>	PT_MASTER	</item>
+        <item>	RED_42KG	</item>
+        <item>	RED_21KG	</item>
+        <item>	RED_1_5KG	</item>
+        <item>	ABER_VAL_42KG	</item>
+        <item>	ABER_VAL_21KG	</item>
+        <item>	POTENC_G5	</item>
+        <item>	POT_G6	</item>
+        <item>	EXPORTACAO	</item>
+        <item>	PT_AR_COMPRI	</item>
+        <item>	M_NIVEL_1T	</item>
+        <item>	M_VZ_EMBEBI	</item>
+        <item>	M_VZ_C_MISTO	</item>
+        <item>	M_RPM_1T	</item>
+        <item>	M_RPM_2e3T	</item>
+        <item>	M_RPM_4e5T	</item>
+        <item>	M_RPM_PICA	</item>
+        <item>	M_RPM_DESF	</item>
+        <item>	RELA_MESA_45	</item>
+        <item>	RELA_MESA_35	</item>
+        <item>	TT_AGUA_EMB	</item>
+        <item>	F_PH_CALEADO	</item>
+        <item>	F_PH_SULFITADO	</item>
+        <item>	F_PH_LICOR_CLARI	</item>
+        <item>	F_NIVEL_EVAP_01	</item>
+        <item>	F_NIVEL_EVAP_1A	</item>
+        <item>	F_NIVEL_EVAP_1B	</item>
+        <item>	F_VZ_CALDO_MISTO	</item>
+        <item>	F_NIVEL_C_MISTO	</item>
+        <item>	F_NIVEL_TQ_XAROPE	</item>
+        <item>	F_NIVEL_MEXEDEIRA	</item>
+        <item>	PT_TORRE_EVAPORA	</item>
+        <item>	TT_ORRE_EVAPORA	</item>
+        <item>	LT_TQ_C_DECAN	</item>
+        <item>	ST_CENT_MASSA_A	</item>
+        <item>	TR_VZ_CAL_DECAN	</item>
+        <item>	VZ_LIC_MISTO	</item>
+        <item>	VZ_LIC_BRUTO	</item>
+        <item>	DES_MV_VAL_VP	</item>
+        <item>	DES_AM_VAL_VP	</item>
+        <item>	TT_BAND_20_COL_A	</item>
+        <item>	DES_SP_TT_VI_COL_A	</item>
+        <item>	DES_MV_V_VI_COL_A	</item>
+        <item>	DES_AM_V_VI_COL_A	</item>
+        <item>	DES_TEMP_VP_COL_A	</item>
+        <item>	DES_SP_TT_VP_COL_A	</item>
+        <item>	DES_MV_V_VP_COL_A	</item>
+        <item>	DES_AM_V_VP_COL_A	</item>
+        <item>	DES_PT_V1	</item>
+        <item>	VZ_VINH_COL_A	</item>
+        <item>	TT_VINH_COL_A	</item>
+        <item>	TT_BAND_01_COL_A	</item>
+        <item>	PT_BASE_COL_A	</item>
+        <item>	GL_VINHO	</item>
+        <item>	VZ_CALDO_DEST	</item>
+        <item>	TT_VP_EVAPOR	</item>
     </string-array>
     <string name="title_activity_splash">ActivitySplash</string>
     <!--

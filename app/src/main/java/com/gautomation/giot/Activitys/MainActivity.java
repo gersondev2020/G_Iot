@@ -190,7 +190,6 @@ public class MainActivity extends AppCompatActivity {
                     return false;
                 }
             });
-
         }
         //Create listener for MQTT messages.
         mqttCallback();
@@ -236,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         SharedPreferences SharadqtdItems = getSharedPreferences("QtdItems", Context.MODE_PRIVATE);
-        Quantidade_de_itens_na_tela = Integer.parseInt(SharadqtdItems.getString("Items", String.valueOf(numerodeitem)));
+        Quantidade_de_itens_na_tela = Integer.parseInt(SharadqtdItems.getString("Items", "20"));
         for(int i = 0; i < numerodeitem; i++) {
             if (i >= Quantidade_de_itens_na_tela){
                 Items[i].setVisibility(View.GONE);

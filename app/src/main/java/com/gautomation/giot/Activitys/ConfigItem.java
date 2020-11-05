@@ -142,7 +142,7 @@ public class ConfigItem extends AppCompatActivity implements AdapterView.OnItemS
         editvalormin.setText(dadosSalvos[4]);
         editvalormax.setText(dadosSalvos[5]);
         SharedPreferences SharadqtdItems = getSharedPreferences("QtdItems", Context.MODE_PRIVATE);
-        String f = SharadqtdItems.getString("Items", String.valueOf(numerodeitem));
+        String f = SharadqtdItems.getString("Items", "20");
         qtdItemsNatela.setText(f);
     }
 
